@@ -7,9 +7,10 @@
 
 @import "portlet_hello_world";
 @import "virtual-G-classroom-private";
+@import "time-table";
+
 body {
-	background-color: $bg-color;
-	
+	background-color: $bg-color;	
 }
 
 .container-fluid-1280 .row {
