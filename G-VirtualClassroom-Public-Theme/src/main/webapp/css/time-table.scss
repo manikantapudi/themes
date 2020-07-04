@@ -55,7 +55,24 @@ font-weight:bold;
 .yui3-skin-sam .calendar-portlet .yui3-calendar-day.yui3-calendar-day-selected{
  background: #FFB401 !important;
 }
-.scheduler-base-controls .btn-group .calendar-add-event-btn{
+.scheduler-base-controls .btn-group .calendar-add-event-btn,.scheduler-base-today.btn.btn-default,.hidden-xs.scheduler-base-view.scheduler-base-view-day.btn-default.btn.active{
 background: #A34129 !important;
 border-color:#A34129 !important;
+color:white !important;
+}
+.hidden-xs.scheduler-base-view.scheduler-base-view-week.btn-default.btn.active{
+background: #A34129 !important;
+border-color:#A34129 !important;
+color:white !important;
+}
+
+.hidden-xs.scheduler-base-view.scheduler-base-view-month.btn-default.btn.active{
+background: #A34129 !important;
+border-color:#A34129 !important;
+color:white !important;
+}
+.hidden-xs.scheduler-base-view.scheduler-base-view-agenda.btn-default.btn.active{
+background: #A34129 !important;
+border-color:#A34129 !important;
+color:white !important;
 }
