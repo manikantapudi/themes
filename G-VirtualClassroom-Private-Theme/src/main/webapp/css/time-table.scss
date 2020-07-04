@@ -76,3 +76,11 @@ background: #A34129 !important;
 border-color:#A34129 !important;
 color:white !important;
 }
+.yui3-skin-sam .calendar-portlet .yui3-calendar-day.lfr-current-day {
+    background-color: #FFB401 !important;
+  color:black !important;
+}
+.yui3-skin-sam .calendar-portlet .yui3-calendar-day.lfr-current-day:hover {
+    background-color: #FFB401 !important;
+  color:white !important;
+}
