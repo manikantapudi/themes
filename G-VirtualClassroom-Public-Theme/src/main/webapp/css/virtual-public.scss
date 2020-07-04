@@ -106,7 +106,22 @@ a#sign-in {
     background-color: white;
 	}
 
+	.vir-priv-sign-in {
+    background-color: #D13F41;
+    border-radius: 4px;
+}
+
+a#sign_out_url {
+    padding: 7px 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+
 /* Log-in */
+
 
 #portlet_com_liferay_login_web_portlet_LoginPortlet{
  background:#F7F8FC;

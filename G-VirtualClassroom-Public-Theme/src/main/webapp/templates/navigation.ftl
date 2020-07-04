@@ -51,6 +51,10 @@
 		</#if> 
 		 
 		</li>
-		
+			<li class="vir-pub-sign-in" >
+		  <#if is_signed_in>
+			<a href="${sign_out_url}"  id="sign_out_url"><div id="sign_out_text-nav">Log out</div></a>	
+		</#if> 
+		</li>
 	</ul>
 </nav>
