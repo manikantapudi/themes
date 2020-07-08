@@ -33,7 +33,7 @@ z-index:1000;
 padding:0px;
 }
 #navigation{
-    /* float: right; */
+   float: right;
     padding-left: 90px;
 }
 
@@ -162,7 +162,7 @@ letter-spacing: 1px;
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
 #navigation{
-    /* float: right; */
+     float: none;
     padding-left: 0px;
 }
 }
