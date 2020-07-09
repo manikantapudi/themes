@@ -10,6 +10,8 @@
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
 	<@liferay_util["include"] page=top_head_include />
+	<link rel="shortcut icon" href="${images_folder}/favicon.ico">
+
 </head>
 
 <body class="${css_class}">
