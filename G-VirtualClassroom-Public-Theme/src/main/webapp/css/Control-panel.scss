@@ -1,0 +1,26 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+
+#panel-manage-user_my_account li+li {
+    display: none;
+}
+#panel-manage-user_my_account li + li+li+li+li{
+ display: block;
+}
+.product-menu .panel-heading{
+height:45px;
+}
+.product-menu .panel-heading .panel-title > .panel-toggler:not(.collapsed){
+
+    background-color: #3A4D5A;
+    border-left: 4px solid #65B6F0;
+    padding-left: 20px;
+    line-height: 32px;
+    padding: 10px 40px 10px 24px;
+    height: 45px;
+}
