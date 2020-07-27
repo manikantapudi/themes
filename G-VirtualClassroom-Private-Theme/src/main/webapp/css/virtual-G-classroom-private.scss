@@ -9,7 +9,7 @@
 #banner{
 background-color: #031c2e;
 width:100%;
-
+max-width: 100%;
 z-index:1000;
  margin-left: 0;
  margin-right: 0;
@@ -17,7 +17,7 @@ z-index:1000;
   min-height: 90px;
 	height:auto;
  position: fixed;
-    max-width: 1500px;
+    
 
     box-shadow: 0 3px 13px -5px #474545;
 }
