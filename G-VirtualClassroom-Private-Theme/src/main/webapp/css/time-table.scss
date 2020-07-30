@@ -50,10 +50,32 @@ font-weight:bold;
 	  color: #A34129 !important;
 	}
 	
-
+.yui3-skin-sam .calendar-portlet .yui3-calendar-day:hover
+{
+background-color: rgba(242, 242, 242, 1);
+color:#333333;
+}
 	.yui3-skin-sam .calendar-portlet .yui3-calendar-weekday {
     color: #A34129 !important;
+	font-size:24px;
+	font-family: 'AvenirNext-Medium', 'Avenir Next Medium', 'Avenir Next';
 }
+.yui3-skin-sam .yui3-calendar-day{
+color: #333333;
+    font-family: 'AvenirNext-Medium', 'Avenir Next Medium', 'Avenir Next';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.yui3-skin-sam .calendar-portlet .yui3-calendar-day:hover, .yui3-skin-sam .calendar-portlet .yui3-calendar-day.yui3-calendar-day-selected:hover, .yui3-skin-sam .calendar-portlet .yui3-calendar-day.yui3-calendar-day-selected.lfr-busy-day:hover{
+color:#333333 !important;
+}
+
+.yui3-skin-sam .calendar-portlet .yui3-calendar-day.lfr-busy-day{
+    font-weight: 200;
+}
+
 .yui3-skin-sam .calendar-portlet .yui3-calendar-day.yui3-calendar-day-selected{
  background: #FFB401 !important;
 }
