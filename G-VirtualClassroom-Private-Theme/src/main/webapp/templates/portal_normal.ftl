@@ -12,6 +12,14 @@
 <#assign group_id = layout.getGroupId()/> 
 <#assign userId= user.getUserId()/>
 <#assign userRole= OrgRolesLocalService.getUserRoleInOrganization(userId,group_id)/>
+<#assign notificationUrl= portletURLFactory.create(request,"com_liferay_notifications_web_portlet_NotificationsPortlet", themeDisplay.getPlid() ,"RENDER_PHASE")/>
+<#assign userNotificationEventLocalService= serviceLocator.findService("com.liferay.portal.kernel.service.UserNotificationEventLocalService") />
+<#assign PortalUtil = staticUtil["com.liferay.portal.kernel.util.PortalUtil"] />
+<#assign  hiddenPageLayoutId= PortalUtil.getPlidFromPortletId(themeDisplay.getScopeGroupId(),'Calendar_Override_Js_portlet_CalendarOverrideJsPortlet') />
+	
+<#assign notSeenNotificationsCount=userNotificationEventLocalService.getArchivedUserNotificationEventsCount(userId, false) />
+	
+	
 <head>
 	<title>${the_title}</title>
 
@@ -55,12 +63,19 @@
 
 						<span class="icon-bar"></span>
 					</button>
-	<!--
-	<li class="v-c-g-c-noti m-view"><a target="_blank" href="#"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
-				 <div class="not-count1m-view"></div> 
-				</a>
+	
+	<li class="v-c-g-c-noti-m m-view"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
+				 <div class="not-count1m-view">${notSeenNotificationsCount}</div> 
+				
 		   </li>
-		   -->
+		   <ul class="gvc-noti-ul-m">
+		   
+		    		       
+			
+
+		 </ul>
+		   
+		   
 		<#if has_navigation && is_setup_complete>
 			<#include "${full_templates_path}/navigation.ftl" />
 		</#if>

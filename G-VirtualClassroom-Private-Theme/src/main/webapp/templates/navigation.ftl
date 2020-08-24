@@ -44,12 +44,19 @@
 				</#if>
 			</li>
 		</#list>
-		<#--
-		  <li class="v-c-g-c-noti"><a target="_blank" href="#"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
-				 <div class="not-count1"><div class="cont-digit1"></div></div> 
-				</a>
+	
+		  <li class="v-c-g-c-noti"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
+				 <div class=""><div class="cont-digit1">${notSeenNotificationsCount}</div></div> 
+				
 		   </li>
-		  --> 
+		   
+		   <ul class="gvc-noti-ul">
+		     
+			  
+			 
+			
+		   </ul>
+		  
 		<li class="vir-priv-sign-in" >
 		 
 				<a href="${sign_out_url}"  id="sign_out_url"><div id="sign_out_text-nav">Log out</div></a>		
@@ -57,3 +64,109 @@
 		
 	</ul>
 </nav>
+
+
+<script>
+
+$( ".v-c-g-c-noti").click(function() {
+ 
+  if(!$(".v-c-g-c-noti").hasClass("show-notification")){
+   console.log("clicked")
+   $(".v-c-g-c-noti").addClass("show-notification")
+   $(".gvc-noti-ul").css("display", "block")
+ notifiCationFunction();
+ 
+  }else{
+  console.log("data showing")
+   $(".gvc-noti-ul").empty();
+   $(".v-c-g-c-noti").removeClass("show-notification")
+   $(".gvc-noti-ul").css("display", "none")
+  
+  }
+  
+  
+  
+  
+});
+
+
+$( ".v-c-g-c-noti-m" ).click(function() {
+  if(!$(".v-c-g-c-noti-m").hasClass("show-notification")){
+   console.log("clicked mobile")
+   $(".v-c-g-c-noti-m").addClass("show-notification")
+   $(".gvc-noti-ul-m").css("display", "block")
+   
+ notifiCationFunction();
+  }else{
+  console.log("data showing")
+  $(".gvc-noti-ul-m").empty();
+   $(".v-c-g-c-noti-m").removeClass("show-notification")
+   $(".gvc-noti-ul-m").css("display", "none")
+  
+  }
+  
+});
+
+
+jQuery(document).ready(function($) {
+var count=${notSeenNotificationsCount};
+console.log("count"+count)
+if(count == 0){
+ $(".cont-digit1").css("display", "none")
+ $(".not-count1m-view").css("display", "none")
+}
+console.log("userRole"+${hiddenPageLayoutId})
+
+		});
+ function notifiCationFunction(){
+	  AUI().use('aui-base','liferay-portlet-url','aui-node', function(A) {	
+	  			var resourceURL = Liferay.PortletURL.createResourceURL();
+	  			 
+	  			 resourceURL.setPortletId('Calendar_Override_Js_portlet_CalendarOverrideJsPortlet');
+	  		    resourceURL.setResourceId('userLatestNotifiCations');
+	  		     resourceURL.setPlid("${hiddenPageLayoutId}"); 
+	  		  console.log("resourceURL:"+resourceURL);
+	  			console.log("userRole12"+resourceURL)
+	  			 $.ajax({
+	  				url:resourceURL,
+	  				type:"POST",						
+	  				method: 'POST',
+	  				dataType: 'json',	
+	  			success: function(data) {
+	  				console.log("data"+data)
+	  				console.log("data.length"+data.length)
+	  				
+	  				var htmldata="";
+	  				 var count=0;
+	  			htmldata=htmldata+'<li class="gvc-noti-li">Notifications</li>';
+	  					if(data.length>0){
+	  					
+	  					
+	  						for(var i=0;i<data.length;i++){
+	  						
+	  						if(count<4){
+	  					htmldata=htmldata+'<li class="gvc-noti-li">'+data[i].notification+'</li>';
+	  					count++;
+	  					}else{
+	  						htmldata=htmldata+'<li class="gvc-noti-li"><a class="more-notification" href="${notificationUrl}&p_p_state=maximized">view more</a></li>';
+	  				break;
+	  					}
+	  						}
+	  						var width = $(window).width();
+	  						console.log(width)
+	  						jQuery('.gvc-noti-ul').append(htmldata);
+	  						jQuery('.gvc-noti-ul-m').append(htmldata);
+	  				}else{
+	  				htmldata=htmldata+'<li class="gvc-noti-li">You don not have any Notification yet</li>';
+	  					jQuery('.gvc-noti-ul').append(htmldata);
+	  				jQuery('.gvc-noti-ul-m').append(htmldata);
+	  				
+	  				}
+	  				$(".cont-digit1").css("display", "none")
+	  				$(".not-count1m-view").css("display", "none")
+	  				}
+	  				});
+	  			});
+	  }
+</script>
+
