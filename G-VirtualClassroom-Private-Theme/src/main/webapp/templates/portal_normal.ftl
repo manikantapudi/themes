@@ -65,7 +65,7 @@
 					</button>
 	
 	<li class="v-c-g-c-noti-m m-view"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
-				 <div class="not-count1m-view"></div> 
+				 <div class="not-count1m-view">${notSeenNotificationsCount}</div> 
 				
 		   </li>
 		   <ul class="gvc-noti-ul-m">
