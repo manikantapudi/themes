@@ -46,7 +46,7 @@
 		</#list>
 	
 		  <li class="v-c-g-c-noti"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
-				<div class="cont-digit1">${notSeenNotificationsCount}</div> 
+				<div class="cont-digit1-div"></div> 
 				
 		   </li>
 		   
@@ -113,7 +113,15 @@ var count=${notSeenNotificationsCount};
 console.log("count"+count)
 if(count == 0){
  $(".cont-digit1").css("display", "none")
+
  $(".not-count1m-view").css("display", "none")
+}else{
+var htmlData='<div class="cont-digit1">'+count+'</div>';
+var mobilehtmlData='<div class="not-count1m-view">'+count+'</div>'
+$(".cont-digit1-div").html(htmlData);
+
+$(".not-count1m-view-div").html(mobilehtmlData);
+
 }
 console.log("userRole"+${hiddenPageLayoutId})
 
