@@ -46,7 +46,7 @@
 		</#list>
 	
 		  <li class="v-c-g-c-noti"><span id="notify_text" class="fa fa-bell ot-cu-bell1"> </span>
-				 <div class=""><div class="cont-digit1">${notSeenNotificationsCount}</div></div> 
+				<div class="cont-digit1"></div>
 				
 		   </li>
 		   
