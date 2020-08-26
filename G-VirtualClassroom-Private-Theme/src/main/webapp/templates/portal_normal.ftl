@@ -135,14 +135,26 @@
 	</style>
 		</#if>
 		
+		<#if userRole== "Site Admin" || userRole== "Parent">
+		<style>
+		.v-c-g-c-noti{
+		display:none !important;
+		}
+		li.v-c-g-c-noti-m.m-view{
+		display:none !important;
+		}
+		</style>
+		</#if>
 	</section>
-<#--
+<!--
 	<footer id="footer" role="contentinfo">
 		<p class="powered-by">
 			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
 		</p>
+		
+		user role is :${userRole}
 	</footer>
-	-->
+-->
 </div>
 
 <@liferay_util["include"] page=body_bottom_include />
