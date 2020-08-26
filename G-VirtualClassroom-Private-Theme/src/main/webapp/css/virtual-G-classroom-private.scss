@@ -197,7 +197,8 @@ li.v-c-g-c-noti {
 /* end */
 
 a.more-notification{
-color:#A34129;
+    color: #0b0bf7;
+    text-decoration: underline !important;
 }
 
 
@@ -205,6 +206,9 @@ color:#A34129;
     max-width: 1500px;
 }
 
+li.gvc-noti-li.gvc-noti-h{
+    color: #A34129;
+}
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
 

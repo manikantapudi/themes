@@ -146,7 +146,7 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  				
 	  				var htmldata="";
 	  				 var count=0;
-	  			htmldata=htmldata+'<li class="gvc-noti-li">Notifications</li>';
+	  			htmldata=htmldata+'<li class="gvc-noti-li gvc-noti-h">Notifications</li>';
 	  					if(data.length>0){
 	  					
 	  					
@@ -156,7 +156,7 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  					htmldata=htmldata+'<li class="gvc-noti-li">'+data[i].notification+'</li>';
 	  					count++;
 	  					}else{
-	  						htmldata=htmldata+'<li class="gvc-noti-li"><a class="more-notification" href="${notificationUrl}&p_p_state=maximized">view more</a></li>';
+	  						htmldata=htmldata+'<li class="gvc-noti-li"><a class="more-notification" href="${notificationUrl}&p_p_state=maximized">View more</a></li>';
 	  				break;
 	  					}
 	  						}
