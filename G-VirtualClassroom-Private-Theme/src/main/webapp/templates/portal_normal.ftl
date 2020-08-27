@@ -19,7 +19,11 @@
 	
 <#assign notSeenNotificationsCount=userNotificationEventLocalService.getArchivedUserNotificationEventsCount(userId, false) />
 	
-	
+	<#assign  permissionChecker  =themeDisplay.getPermissionChecker()>
+	<#assign  issuperadmin =permissionChecker.isOmniadmin()?string>
+
+
+
 <head>
 	<title>${the_title}</title>
 
@@ -110,7 +114,7 @@
 }
 	</style>
 	 
-   <#if userRole== "Site Admin">
+   <#if userRole== "Site Admin" || issuperadmin="true">
 		
 	<style>
      .control-menu-level-1{
@@ -145,14 +149,19 @@
 		}
 		</style>
 		</#if>
+		
+		
+		
 	</section>
-<!--
+	<!--
 	<footer id="footer" role="contentinfo">
 		<p class="powered-by">
 			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
 		</p>
 		
 		user role is :${userRole}
+	
+		
 	</footer>
 -->
 </div>
