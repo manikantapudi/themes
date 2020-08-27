@@ -70,6 +70,7 @@
 
 
 $( ".v-c-g-c-noti").click(function() {
+ event.stopPropagation();
   $this = $(this);
 
  $(".gvc-noti-ul").empty();
@@ -97,6 +98,7 @@ $( ".v-c-g-c-noti").click(function() {
 
 
 $( ".v-c-g-c-noti-m" ).click(function() {
+ event.stopPropagation();
 console.log("cliked mobile")
   $this = $(this);
 
@@ -120,6 +122,18 @@ console.log("cliked mobile")
   }
   
 });
+$(document).on("click", function(event){
+console.log("data yes")
+ if($(".v-c-g-c-noti").hasClass("show-notification")){
+   $(".gvc-noti-ul").empty();
+   $(".v-c-g-c-noti").removeClass("show-notification")
+ }
+ if($(".v-c-g-c-noti-m").hasClass("show-notification")){
+  $(".gvc-noti-ul-m").empty();
+   $(".v-c-g-c-noti-m").removeClass("show-notification")
+ }
+          
+    });
 
 
 
