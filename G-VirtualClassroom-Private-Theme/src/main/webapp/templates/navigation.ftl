@@ -69,9 +69,14 @@
 <script>
 
 $( ".v-c-g-c-noti").click(function() {
+  $this = $(this);
+
  $(".gvc-noti-ul").empty();
   if(!$(".v-c-g-c-noti").hasClass("show-notification")){
    console.log("clicked")
+   $this.css({
+    "pointer-events": "none"
+});
    $(".v-c-g-c-noti").addClass("show-notification")
    $(".gvc-noti-ul").css("display", "block")
  notifiCationFunction();
@@ -91,8 +96,15 @@ $( ".v-c-g-c-noti").click(function() {
 
 
 $( ".v-c-g-c-noti-m" ).click(function() {
+console.log("cliked mobile")
+  $this = $(this);
+
+
  $(".gvc-noti-ul-m").empty();
   if(!$(".v-c-g-c-noti-m").hasClass("show-notification")){
+  $this.css({
+    "pointer-events": "none"
+});
    console.log("clicked mobile")
    $(".v-c-g-c-noti-m").addClass("show-notification")
    $(".gvc-noti-ul-m").css("display", "block")
@@ -174,6 +186,8 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  				jQuery('.gvc-noti-ul-m').append(htmldata);
 	  				
 	  				}
+	  				   $(".v-c-g-c-noti").css("pointer-events","auto")
+	  				      $(".v-c-g-c-noti-m").css("pointer-events","auto")
 	  				$(".cont-digit1").css("display", "none")
 	  				$(".not-count1m-view").css("display", "none")
 	  				}
