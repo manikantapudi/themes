@@ -3,6 +3,18 @@
 <#include init />
 
 <html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
+<#assign serviceContext = staticUtil["com.liferay.portal.kernel.service.ServiceContextThreadLocal"].getServiceContext()>
+<#assign OrgRolesLocalService = serviceLocator.findService("com.vidyayug.global.service.Org_RolesLocalService")>
+<#assign themeDisplay = serviceContext.getThemeDisplay() />
+<#assign userGroupRoleLocalServiceUtil = staticUtil['com.liferay.portal.kernel.service.UserGroupRoleLocalServiceUtil']/>
+<#assign roleLocalServiceUtil = staticUtil['com.liferay.portal.kernel.service.RoleLocalServiceUtil'] />
+<#assign layout = themeDisplay.getLayout() />
+<#assign group_id = layout.getGroupId()/> 
+<#assign userId= user.getUserId()/>
+<#assign userRole= OrgRolesLocalService.getUserRoleInOrganization(userId,group_id)/>
+
+<#assign  permissionChecker  =themeDisplay.getPermissionChecker()>
+	<#assign  issuperadmin =permissionChecker.isOmniadmin()?string>
 
 <head>
 	<title>${the_title}</title>
@@ -62,7 +74,6 @@
 			<@liferay.breadcrumbs />
 		</nav>
     -->
-	
 		<#if selectable>
 			<@liferay_util["include"] page=content_include />
 		<#else>
@@ -74,6 +85,40 @@
 				<@liferay_util["include"] page=content_include />
 			</@>
 		</#if>
+			<style>
+     .control-menu-level-1{
+	 display:none;
+	 }
+	 .has-control-menu #wrapper {
+    margin-top: 0px;
+}
+	</style>
+	 
+   <#if userRole== "Site Admin" || issuperadmin="true">
+		
+	<style>
+     .control-menu-level-1{
+	 display:block;
+	 }
+	 #content {
+    margin-top: 72px;
+	}
+		 .has-control-menu #wrapper {
+      margin-top: 65px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+
+	 .has-control-menu #wrapper {
+     margin-top: 48px !important;
+}
+#content {
+    margin-top: 85px;
+}
+}
+
+	</style>
+		</#if>		
 	</section>
 <#--
 	<footer id="footer" role="contentinfo">
