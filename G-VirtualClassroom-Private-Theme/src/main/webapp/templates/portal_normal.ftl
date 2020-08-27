@@ -126,8 +126,19 @@
 		 .has-control-menu #wrapper {
       margin-top: 65px;
 }
+.popover.top {
+    margin-top: auto !important;
+}
+
+div#_com_liferay_calendar_web_portlet_CalendarPortlet_columnOptions {
+    margin-top: 0px;
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
+.popover.top {
+    margin-top: auto !important;
+}
 	 .has-control-menu #wrapper {
      margin-top: 48px !important;
 }

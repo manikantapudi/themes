@@ -68,6 +68,7 @@
 
 <script>
 
+
 $( ".v-c-g-c-noti").click(function() {
   $this = $(this);
 
@@ -149,8 +150,6 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  		     resourceURL.setPlid("${hiddenPageLayoutId}"); 
 	  		  console.log("resourceURL:"+resourceURL);
 	  			console.log("userRole12"+resourceURL)
-	  			$(".gvc-noti-ul-m").empty();
-	  			$(".gvc-noti-ul").empty();
 	  			 $.ajax({
 	  				url:resourceURL,
 	  				type:"POST",						
@@ -186,7 +185,7 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  				jQuery('.gvc-noti-ul-m').append(htmldata);
 	  				
 	  				}
-	  				   $(".v-c-g-c-noti").css("pointer-events","auto")
+	  				$(".v-c-g-c-noti").css("pointer-events","auto")
 	  				      $(".v-c-g-c-noti-m").css("pointer-events","auto")
 	  				$(".cont-digit1").css("display", "none")
 	  				$(".not-count1m-view").css("display", "none")
