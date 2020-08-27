@@ -69,7 +69,7 @@
 <script>
 
 $( ".v-c-g-c-noti").click(function() {
- 
+ $(".gvc-noti-ul").empty();
   if(!$(".v-c-g-c-noti").hasClass("show-notification")){
    console.log("clicked")
    $(".v-c-g-c-noti").addClass("show-notification")
@@ -91,6 +91,7 @@ $( ".v-c-g-c-noti").click(function() {
 
 
 $( ".v-c-g-c-noti-m" ).click(function() {
+ $(".gvc-noti-ul-m").empty();
   if(!$(".v-c-g-c-noti-m").hasClass("show-notification")){
    console.log("clicked mobile")
    $(".v-c-g-c-noti-m").addClass("show-notification")
@@ -106,6 +107,7 @@ $( ".v-c-g-c-noti-m" ).click(function() {
   }
   
 });
+
 
 
 jQuery(document).ready(function($) {
@@ -135,6 +137,8 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  		     resourceURL.setPlid("${hiddenPageLayoutId}"); 
 	  		  console.log("resourceURL:"+resourceURL);
 	  			console.log("userRole12"+resourceURL)
+	  			$(".gvc-noti-ul-m").empty();
+	  			$(".gvc-noti-ul").empty();
 	  			 $.ajax({
 	  				url:resourceURL,
 	  				type:"POST",						
