@@ -12,6 +12,7 @@
 <#assign group_id = layout.getGroupId()/> 
 <#assign userId= user.getUserId()/>
 <#assign userRole= OrgRolesLocalService.getUserRoleInOrganization(userId,group_id)/>
+
 <#assign notificationUrl= portletURLFactory.create(request,"com_liferay_notifications_web_portlet_NotificationsPortlet", themeDisplay.getPlid() ,"RENDER_PHASE")/>
 <#assign userNotificationEventLocalService= serviceLocator.findService("com.liferay.portal.kernel.service.UserNotificationEventLocalService") />
 <#assign PortalUtil = staticUtil["com.liferay.portal.kernel.util.PortalUtil"] />
@@ -112,11 +113,29 @@
 	 .has-control-menu #wrapper {
     margin-top: 0px;
 }
+
+
+body.open #wrapper {
+    padding-left: 0px;
+}
+
+.sidenav-fixed.sidenav-menu-slider.open {
+    visibility: hidden;
+	}
+
 	</style>
 	 
    <#if userRole== "Site Admin" || issuperadmin="true">
 		
 	<style>
+	
+	body.open #wrapper {
+    padding-left: 320px;
+}
+.sidenav-fixed.sidenav-menu-slider.open {
+    visibility: visible;
+	}
+	
      .control-menu-level-1{
 	 display:block;
 	 }
@@ -145,6 +164,8 @@ div#_com_liferay_calendar_web_portlet_CalendarPortlet_columnOptions {
 #content {
     margin-top: 85px;
 }
+
+
 }
 
 	</style>
