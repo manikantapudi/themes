@@ -117,6 +117,7 @@ a#sign_out_url {
 /* Notification */
 
 .gvc-noti-ul{
+max-width:350px;
 position: absolute;
     top: 48px;
     right: 70px;
@@ -127,6 +128,13 @@ position: absolute;
 	    border-radius: 4px;
 	display:none;	
 }
+.meetimg-on-css {
+    word-break: break-all;
+}
+.del-time-css{
+float:right;
+}
+
 .gvc-noti-li{
 padding: 7px 12px 7px 12px;
  border-bottom: 1px solid #cacaca;
@@ -288,7 +296,7 @@ display:none !important;
 .gvc-noti-ul-m{
 position: absolute;
     top: 55px;
-    right: 70px;
+       right: 55px;
     list-style: none;
     padding: 0;
     background: white;
@@ -296,9 +304,12 @@ position: absolute;
 	    border-radius: 4px;
 		display:none;
 		z-index:10;
+		width:320px;
 		
 }
-
+.del-time-css{
+    float: none;
+}
 a#sign_out_url {
     padding: 7px 19px;
 	}
