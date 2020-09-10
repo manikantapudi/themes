@@ -85,40 +85,7 @@
 				<@liferay_util["include"] page=content_include />
 			</@>
 		</#if>
-			<style>
-     .control-menu-level-1{
-	 display:none;
-	 }
-	 .has-control-menu #wrapper {
-    margin-top: 0px;
-}
-	</style>
-	 
-   <#if userRole== "Site Admin" || issuperadmin="true">
-		
-	<style>
-     .control-menu-level-1{
-	 display:block;
-	 }
-	 #content {
-    margin-top: 72px;
-	}
-		 .has-control-menu #wrapper {
-      margin-top: 65px;
-}
-@media screen and (min-width: 320px) and (max-width: 767px) {
-
-
-	 .has-control-menu #wrapper {
-     margin-top: 48px !important;
-}
-#content {
-    margin-top: 85px;
-}
-}
-
-	</style>
-		</#if>		
+			
 	</section>
 <#--
 	<footer id="footer" role="contentinfo">
