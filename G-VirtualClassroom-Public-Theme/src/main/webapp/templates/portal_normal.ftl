@@ -38,11 +38,11 @@
 	<header id="banner" class="row" role="banner">
 		<div id="heading" class="col-md-2 col-xs-2 col-sm-2">
 			<h1 class="site-title">
-				<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
+				<a class="${logo_css_class}" href="${site_default_url}" title="${site_name}" key="go-to-x" />
 					<img alt="${logo_description}" src="${site_logo}" class="v-c-logo" />
 				</a>
                  <#if show_site_name>
-					<span class="site-name" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
+					<span class="site-name" title="${site_name}" key="go-to-x" />
 						${site_name}
 					</span>
 				</#if>
