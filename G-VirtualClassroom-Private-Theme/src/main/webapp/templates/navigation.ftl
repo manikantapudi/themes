@@ -194,7 +194,7 @@ console.log("userRole"+${hiddenPageLayoutId})
 	  						jQuery('.gvc-noti-ul').append(htmldata);
 	  						jQuery('.gvc-noti-ul-m').append(htmldata);
 	  				}else{
-	  				htmldata=htmldata+'<li class="gvc-noti-li">You don not have any Notification yet</li>';
+	  				htmldata=htmldata+'<li class="gvc-noti-li">You do not have any Notification yet</li>';
 	  					jQuery('.gvc-noti-ul').append(htmldata);
 	  				jQuery('.gvc-noti-ul-m').append(htmldata);
 	  				

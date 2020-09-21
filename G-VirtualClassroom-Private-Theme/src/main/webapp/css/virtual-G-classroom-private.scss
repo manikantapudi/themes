@@ -22,8 +22,10 @@ z-index:1000;
     box-shadow: 0 3px 13px -5px #474545;
 }
 .v-c-pv-logo{
- width: 75%;
-
+    height: auto;
+    width: auto;
+    max-width: 115px;
+    max-height: 50px;
 }
 
 .main-div-event {
