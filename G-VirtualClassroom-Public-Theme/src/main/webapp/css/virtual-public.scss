@@ -51,7 +51,7 @@ span.site-name {
 }
 
 #navigation ul li.vir-pub a{
-font-weight:bold;
+font-weight:100;
 font-size:16px;
  padding: 7px 20px;
  color:white;
@@ -60,7 +60,7 @@ font-size:16px;
     word-spacing: 3px;
 }
 #navigation ul li.selected a{
-font-weight:bold;
+font-weight:100;
  padding: 7px 20px;
 color:#D13F41;
 font-size:16px;
@@ -100,11 +100,7 @@ color: #D13F41;
 background-color:#D13F41;
 border-radius: 4px;
 }
-vir-pub-sign-in a {
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-}
+
 a#sign-in {
     padding: 7px 30px;
 	color: white;
